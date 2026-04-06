@@ -370,13 +370,96 @@
   /* Smooth scroll */
   html { scroll-behavior: smooth; }
 
+  /* ===== STICKY HEADER ===== */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    height: 60px;
+    background: rgba(15, 17, 21, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: box-shadow 0.3s ease;
+  }
+  .site-header.scrolled {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+  }
+
+  .header-jm {
+    font-family: "Sora", -apple-system, sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    flex-shrink: 0;
+  }
+
+  .header-logos {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 36px;
+  }
+  .header-logos a { display: flex; align-items: center; text-decoration: none; opacity: 0.6; transition: opacity 0.2s ease; }
+  .header-logos a:hover { opacity: 1; }
+  .header-logos img { height: 22px; width: auto; }
+  .header-logos .logo-text-boost-sm { font-size: 16px; margin-bottom: 0; opacity: 0.6; transition: opacity 0.2s ease; }
+  .header-logos .logo-text-boost-sm:hover { opacity: 1; }
+
+  .header-spacer { flex: 1; }
+
+  .header-cta {
+    display: inline-block;
+    padding: 8px 22px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #3b82f6, #a855f7);
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex-shrink: 0;
+  }
+  .header-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(99,102,241,0.4);
+  }
+
+  /* Offset body for fixed header */
+  .page:first-of-type { padding-top: 120px; }
+
   @media (max-width: 768px) {
     .page { padding: 40px 24px; }
+    .page:first-of-type { padding-top: 100px; }
     h1 { font-size: 32px; }
     .hero-headline { font-size: 42px !important; }
     h2 { font-size: 24px; }
     .grid-2, .grid-3 { grid-template-columns: 1fr; }
     .page-footer { left: 24px; right: 24px; }
+
+    .site-header { padding: 0 16px; height: 56px; }
+    .header-logos { gap: 14px; margin-left: 20px; }
+    .header-logos img { height: 18px; }
+    .header-logos .logo-text-boost-sm { font-size: 14px; }
+    .header-cta { padding: 7px 16px; font-size: 12px; }
+  }
+
+  @media (max-width: 480px) {
+    .header-logos { gap: 10px; margin-left: 14px; }
+    .header-logos img { height: 16px; }
+    .header-logos .logo-text-boost-sm { font-size: 12px; }
+    .header-jm { font-size: 18px; }
+    .header-cta { padding: 6px 14px; font-size: 11px; }
   }
 
   /* Reduce motion for accessibility */
@@ -390,6 +473,18 @@
 </style>
 </head>
 <body>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <a href="#" class="header-jm">JM</a>
+  <div class="header-logos">
+    <a href="https://reefract.ai" target="_blank"><img src="reefract-logo.png" alt="Reefract"></a>
+    <a href="https://teyra.io" target="_blank"><img src="teyra-logo.png" alt="Teyra"></a>
+    <a href="https://buddyboost.io" target="_blank" class="logo-text-boost-sm" style="font-family:'Sora',sans-serif;font-weight:800;color:#fff;text-decoration:none;">Buddy<span style="color:#00E676;">Boost</span></a>
+  </div>
+  <div class="header-spacer"></div>
+  <a href="#contact" class="header-cta">Get in Touch</a>
+</header>
 
 <!-- ============================================ -->
 <!-- COVER / HERO -->
@@ -849,7 +944,7 @@
 <!-- ============================================ -->
 <!-- CONTACT / CLOSE -->
 <!-- ============================================ -->
-<div class="page page-dark" style="text-align: center;">
+<div id="contact" class="page page-dark" style="text-align: center;">
   <div class="container">
     <h1 class="reveal" style="font-size: 52px; margin-bottom: 24px;">Let&rsquo;s talk.</h1>
     <p class="reveal" style="font-size: 18px; color: #a0a4b8; max-width: 480px; margin: 0 auto 40px;">Whether you&rsquo;re a dispensary operator, a brand looking for retail activation, or an investor &mdash; I&rsquo;d love to connect.</p>
@@ -882,6 +977,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
   els.forEach(el => observer.observe(el));
+
+  // Header scroll shadow
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
 });
 </script>
 
