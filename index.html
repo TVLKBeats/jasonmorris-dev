@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jason Morris — Master Pitch Deck</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 15px; line-height: 1.7; color: #1a1a1a; background: #fff; }
+
+  /* Page system */
+  .page { min-height: 100vh; padding: 60px 80px; display: flex; flex-direction: column; justify-content: center; position: relative; page-break-after: always; }
+  .page-dark { background: #0f1115; color: #f5f7fa; }
+  .page-reefract { background: linear-gradient(135deg, #0a1628 0%, #0f1f3d 100%); color: #f5f7fa; }
+  .page-teyra { background: linear-gradient(135deg, #1a0a2e 0%, #2d1450 100%); color: #f5f7fa; }
+  .page-boost { background: linear-gradient(135deg, #0a1a10 0%, #0f1115 100%); color: #f5f7fa; }
+
+  .container { max-width: 960px; margin: 0 auto; width: 100%; }
+
+  /* Typography */
+  h1 { font-size: 48px; font-weight: 800; letter-spacing: -1px; line-height: 1.1; margin-bottom: 16px; }
+  h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 12px; }
+  h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .subtitle { font-size: 20px; color: #888; line-height: 1.5; margin-bottom: 32px; }
+  .page-dark .subtitle, .page-reefract .subtitle, .page-teyra .subtitle, .page-boost .subtitle { color: #a0a4b8; }
+
+  /* Accent colors */
+  .accent-reefract { color: #3b82f6; }
+  .accent-teyra { color: #a855f7; }
+  .accent-boost { color: #00E676; }
+  .accent-white { color: #fff; }
+
+  .pill { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; padding: 4px 14px; border-radius: 20px; margin-bottom: 20px; }
+  .pill-reefract { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+  .pill-teyra { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+  .pill-boost { background: rgba(0, 230, 118, 0.15); color: #00E676; }
+
+  /* Logos */
+  .logo-img { height: 48px; width: auto; margin-bottom: 16px; display: block; }
+  .logo-img-sm { height: 36px; width: auto; }
+  .logo-img-lg { height: 64px; width: auto; margin-bottom: 20px; display: block; }
+  .logo-text-boost, a.logo-text-boost, a.logo-text-boost-sm, a.logo-text-boost-lg { font-family: "Sora", -apple-system, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.5px; color: #fff !important; margin-bottom: 16px; display: inline-block; text-decoration: none !important; }
+  .logo-text-boost span, a.logo-text-boost span, a.logo-text-boost-sm span, a.logo-text-boost-lg span { color: #00E676 !important; }
+  .logo-text-boost-lg, a.logo-text-boost-lg { font-size: 36px; margin-bottom: 20px; }
+  .logo-text-boost-sm, a.logo-text-boost-sm { font-size: 22px; margin-bottom: 0; }
+
+  /* Logo links */
+  a.logo-link { text-decoration: none; display: inline-block; }
+  a.logo-link:hover { opacity: 0.85; }
+
+  /* Grid */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 24px 0; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin: 24px 0; }
+
+  /* Cards */
+  .card { padding: 28px; border-radius: 12px; }
+  .card-dark { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); }
+
+  /* Stats */
+  .stat { text-align: center; padding: 20px; }
+  .stat-number { font-size: 42px; font-weight: 800; letter-spacing: -1px; line-height: 1; }
+  .stat-label { font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+
+  /* Feature list */
+  .feature-list { list-style: none; }
+  .feature-list li { padding: 10px 0; padding-left: 28px; position: relative; font-size: 16px; }
+  .feature-list li::before { content: ""; position: absolute; left: 0; top: 18px; width: 12px; height: 12px; border-radius: 50%; }
+  .feature-list.reefract li::before { background: #3b82f6; }
+  .feature-list.teyra li::before { background: #a855f7; }
+  .feature-list.boost li::before { background: #00E676; }
+
+  /* Problem/solution */
+  .problem { padding: 24px; border-left: 4px solid #ef4444; background: rgba(239, 68, 68, 0.08); border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+  .solution { padding: 24px; border-left: 4px solid #22c55e; background: rgba(34, 197, 94, 0.08); border-radius: 0 8px 8px 0; }
+
+  /* Pricing table */
+  .pricing-row { display: flex; align-items: center; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .pricing-row:last-child { border-bottom: none; }
+  .pricing-label { flex: 1; font-weight: 600; }
+  .pricing-value { font-size: 18px; font-weight: 700; }
+
+  /* Chat bubble mockup */
+  .chat-bubble { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 12px 12px 12px 2px; padding: 14px 18px; font-size: 14px; margin-bottom: 10px; max-width: 85%; color: #c8d6f0; }
+  .chat-response { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px 12px 2px 12px; padding: 14px 18px; font-size: 14px; margin-bottom: 10px; margin-left: auto; max-width: 85%; color: #d0d4dc; }
+
+  /* Divider */
+  .divider { width: 60px; height: 4px; border-radius: 2px; margin: 24px 0; }
+
+  /* Footer bar */
+  .page-footer { position: absolute; bottom: 24px; left: 80px; right: 80px; display: flex; justify-content: space-between; font-size: 12px; color: #555; }
+
+  /* Print */
+  @media print {
+    .page { min-height: auto; padding: 0.5in 0.75in; page-break-after: always; }
+    body { font-size: 11pt; }
+    h1 { font-size: 28pt; }
+    h2 { font-size: 20pt; }
+  }
+
+  /* ===== ANIMATIONS ===== */
+
+  /* Scroll-triggered reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered children */
+  .stagger > * { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+  .stagger.visible > *:nth-child(1) { transition-delay: 0s; }
+  .stagger.visible > *:nth-child(2) { transition-delay: 0.1s; }
+  .stagger.visible > *:nth-child(3) { transition-delay: 0.2s; }
+  .stagger.visible > *:nth-child(4) { transition-delay: 0.3s; }
+  .stagger.visible > *:nth-child(5) { transition-delay: 0.4s; }
+  .stagger.visible > *:nth-child(6) { transition-delay: 0.5s; }
+  .stagger.visible > * { opacity: 1; transform: translateY(0); }
+
+  /* Scale-in for cards */
+  .card-pop {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card-pop.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  /* Card hover effects */
+  .card-dark {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .card-dark:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    border-color: rgba(255,255,255,0.15);
+  }
+
+  /* Hero section */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .hero-bg::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    animation: float1 8s ease-in-out infinite;
+  }
+  .hero-bg::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(168,85,247,0.1) 0%, transparent 70%);
+    bottom: -80px;
+    left: -80px;
+    animation: float2 10s ease-in-out infinite;
+  }
+  .hero-orb-green {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,230,118,0.08) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: float3 12s ease-in-out infinite;
+  }
+
+  @keyframes float1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-30px, 20px) scale(1.05); }
+  }
+  @keyframes float2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(20px, -30px) scale(1.08); }
+  }
+  @keyframes float3 {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.15); }
+  }
+
+  /* Grid lines background */
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
+  }
+
+  /* Headline animation */
+  .hero-headline {
+    font-size: 64px !important;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: heroIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  }
+  .hero-subtitle-anim {
+    opacity: 0;
+    animation: heroIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+  }
+  .hero-logos-anim {
+    opacity: 0;
+    animation: heroIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+  }
+  .hero-tag-anim {
+    opacity: 0;
+    animation: heroIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+  }
+
+  @keyframes heroIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Glowing accent underline */
+  .glow-text {
+    position: relative;
+    display: inline;
+  }
+  .glow-text::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #a855f7, #00E676);
+    border-radius: 2px;
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+  @keyframes glowPulse {
+    0%, 100% { opacity: 0.6; filter: blur(0px); }
+    50% { opacity: 1; filter: blur(1px); }
+  }
+
+  /* Stat counter glow */
+  .stat-number {
+    transition: text-shadow 0.3s ease;
+  }
+  .stat:hover .stat-number {
+    text-shadow: 0 0 20px currentColor;
+  }
+
+  /* Chat bubble slide-in */
+  .chat-slide {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .chat-slide-right {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .chat-slide.visible, .chat-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Problem/Solution pulse border */
+  .problem { transition: border-color 0.3s ease; }
+  .problem:hover { border-color: #f87171; }
+  .solution { transition: border-color 0.3s ease; }
+  .solution:hover { border-color: #4ade80; }
+
+  /* Flywheel arrow connectors */
+  .flywheel-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #333;
+    animation: arrowPulse 2s ease-in-out infinite;
+  }
+  @keyframes arrowPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* Pill shimmer */
+  .pill {
+    position: relative;
+    overflow: hidden;
+  }
+  .pill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 200%; }
+  }
+
+  /* CTA button */
+  .cta-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #3b82f6, #a855f7);
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(99,102,241,0.4);
+  }
+  .cta-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  /* Smooth scroll */
+  html { scroll-behavior: smooth; }
+
+  @media (max-width: 768px) {
+    .page { padding: 40px 24px; }
+    h1 { font-size: 32px; }
+    .hero-headline { font-size: 42px !important; }
+    h2 { font-size: 24px; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .page-footer { left: 24px; right: 24px; }
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    .reveal, .stagger > *, .card-pop, .chat-slide, .chat-slide-right { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- COVER / HERO -->
+<!-- ============================================ -->
+<div class="page page-dark" style="overflow: hidden;">
+  <div class="hero-bg">
+    <div class="hero-orb-green"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="container" style="position: relative; z-index: 1;">
+    <p class="hero-tag-anim" style="font-size: 13px; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 48px;">Jason Morris &mdash; Founder &amp; Solo Builder</p>
+    <h1 class="hero-headline">Three products.<br><span class="glow-text">One vision.</span></h1>
+    <p class="subtitle hero-subtitle-anim" style="max-width: 580px; font-size: 21px; line-height: 1.6;">
+      A vertically integrated software portfolio that gives retail operators the tools to
+      <strong style="color: #3b82f6;">understand their business</strong>,
+      <strong style="color: #a855f7;">grow recurring revenue</strong>, and
+      <strong style="color: #00E676;">incentivize their people</strong>.
+    </p>
+    <div class="hero-logos-anim" style="display: flex; align-items: center; gap: 36px; margin-top: 52px;">
+      <a href="https://reefract.ai" class="logo-link" target="_blank"><img src="reefract-logo.png" class="logo-img-sm" alt="Reefract Analytics" style="height: 44px;"></a>
+      <a href="https://teyra.io" class="logo-link" target="_blank"><img src="teyra-logo.png" class="logo-img-sm" alt="Teyra" style="height: 44px;"></a>
+      <a href="https://buddyboost.io" class="logo-link logo-text-boost-sm" target="_blank">Buddy<span>Boost</span></a>
+    </div>
+    <div class="hero-logos-anim" style="margin-top: 48px; display: flex; gap: 32px; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <div style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e;"></div>
+        <span style="font-size: 13px; color: #6b7280; letter-spacing: 0.5px;">3 live products</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <div style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e;"></div>
+        <span style="font-size: 13px; color: #6b7280; letter-spacing: 0.5px;">3 LLCs</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <div style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e;"></div>
+        <span style="font-size: 13px; color: #6b7280; letter-spacing: 0.5px;">1 founder shipping code</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Confidential</span><span>2026</span></div>
+</div>
+
+<!-- ============================================ -->
+<!-- PORTFOLIO OVERVIEW -->
+<!-- ============================================ -->
+<div class="page page-dark">
+  <div class="container">
+    <h2 class="reveal">The Portfolio</h2>
+    <p class="subtitle reveal">Three SaaS products that serve retail operators at different points in their growth journey &mdash; from data intelligence to customer retention to team performance.</p>
+    <div class="grid-3 stagger">
+      <div class="card card-dark" style="border-top: 3px solid #3b82f6;">
+        <a href="https://reefract.ai" class="logo-link" target="_blank"><img src="reefract-logo.png" class="logo-img" alt="Reefract" style="height: 40px;"></a>
+        <p style="font-size: 14px; color: #a0a4b8; margin-bottom: 12px;">Understand Your Business</p>
+        <p style="font-size: 14px;">AI-powered analytics kiosk that turns POS data into plain-English buying recommendations, automated reports, shrinkage detection, and margin optimization.</p>
+        <p style="margin-top: 16px; font-size: 13px; color: #3b82f6; font-weight: 600;">$1,200 hardware setup &bull; $1,000/mo</p>
+      </div>
+      <div class="card card-dark" style="border-top: 3px solid #a855f7;">
+        <a href="https://teyra.io" class="logo-link" target="_blank"><img src="teyra-logo.png" class="logo-img" alt="Teyra" style="height: 40px;"></a>
+        <p style="font-size: 14px; color: #a0a4b8; margin-bottom: 12px;">Grow Recurring Revenue</p>
+        <p style="font-size: 14px;">White-label membership platform that lets any retail store launch branded subscription programs with ACH payments &mdash; no POS integration required.</p>
+        <p style="margin-top: 16px; font-size: 13px; color: #a855f7; font-weight: 600;">$5 per subscriber / month</p>
+      </div>
+      <div class="card card-dark" style="border-top: 3px solid #00E676;">
+        <a href="https://buddyboost.io" class="logo-link logo-text-boost" style="font-size: 22px; margin-bottom: 12px;" target="_blank">Buddy<span>Boost</span></a>
+        <p style="font-size: 14px; color: #a0a4b8; margin-bottom: 12px;">Incentivize Your People</p>
+        <p style="font-size: 14px;">Brands fund campaigns, stores approve them, staff earn cash rewards for every qualifying sale &mdash; automatically matched via POS data.</p>
+        <p style="margin-top: 16px; font-size: 13px; color: #00E676; font-weight: 600;">Free for stores &bull; 3&ndash;10% on reward flow</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Portfolio Overview</span><span>2</span></div>
+</div>
+
+<!-- ============================================ -->
+<!-- REEFRACT — PROBLEM -->
+<!-- ============================================ -->
+<div class="page page-reefract">
+  <div class="container">
+    <a href="https://reefract.ai" class="logo-link" target="_blank"><img src="reefract-logo.png" class="logo-img-lg" alt="Reefract Analytics"></a>
+    <h1 class="reveal"><span class="accent-reefract">Know</span> what to buy,<br>what to cut, and why.</h1>
+    <p class="subtitle" style="max-width: 540px;">Dispensary operators sit on mountains of transaction data but can&rsquo;t access it without expensive BI tools, CSV exports, or gut instinct.</p>
+    <div class="grid-2" style="margin-top: 32px;">
+      <div class="problem">
+        <h3 style="color: #ef4444; margin-bottom: 8px;">The Problem</h3>
+        <ul class="feature-list" style="list-style: none; padding: 0;">
+          <li style="padding-left: 0;">Reports take time to filter and build &mdash; staff waste hours pulling data from the POS</li>
+          <li style="padding-left: 0;">Spreadsheet exports lead to inaccurate filtering and data that&rsquo;s stale the moment it leaves the POS</li>
+          <li style="padding-left: 0;">Buyers make reorder decisions on gut feel, leading to overstock and dead inventory</li>
+          <li style="padding-left: 0;">Shrinkage and theft go undetected until quarterly audits</li>
+        </ul>
+      </div>
+      <div class="solution">
+        <h3 style="color: #22c55e; margin-bottom: 8px;">Reefract&rsquo;s Answer</h3>
+        <ul class="feature-list" style="list-style: none; padding: 0;">
+          <li style="padding-left: 0;">Ask questions in plain English &mdash; &ldquo;What should I reorder this week?&rdquo;</li>
+          <li style="padding-left: 0;">AI recommendations ranked by GMROI and margin impact</li>
+          <li style="padding-left: 0;">Automated reports and alerts delivered on your schedule</li>
+          <li style="padding-left: 0;">Export any query to CSV, email it, or view it in-browser</li>
+          <li style="padding-left: 0;">Ships as a plug-and-play kiosk &mdash; operational in under an hour</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Reefract Analytics</span><span>3</span></div>
+</div>
+
+<!-- ============================================ -->
+<!-- REEFRACT — HOW IT WORKS -->
+<!-- ============================================ -->
+<div class="page page-reefract">
+  <div class="container">
+    <a href="https://reefract.ai" class="logo-link" target="_blank"><img src="reefract-logo.png" class="logo-img" alt="Reefract"></a>
+    <h2 class="reveal">How It Works</h2>
+    <div class="divider" style="background: #3b82f6;"></div>
+    <div class="grid-2" style="margin-top: 24px;">
+      <div>
+        <ul class="feature-list reefract">
+          <li><strong>Plug in the kiosk.</strong> A compact mini PC ships pre-configured. Connect to Wi-Fi, enter your Dutchie API key, and data starts syncing automatically.</li>
+          <li><strong>Ask anything.</strong> Conversational AI interface &mdash; no dashboards to learn. &ldquo;Show me my slowest-moving concentrates&rdquo; or &ldquo;What&rsquo;s my best margin category this month?&rdquo;</li>
+          <li><strong>Get strategic answers.</strong> Multi-agent AI pipeline compresses 5,000+ SKUs into focused, financially-grounded recommendations with projected dollar impact.</li>
+          <li><strong>Catch problems early.</strong> Automated shrinkage alerts, overstock warnings, and reorder triggers sent before they become costly.</li>
+          <li><strong>Access from anywhere.</strong> Secure remote access via Cloudflare tunnel. Staff can pull up the AI on their phone via QR code.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card card-dark" style="margin-bottom: 16px;">
+          <h3 class="accent-reefract">Delivery Model</h3>
+          <p style="font-size: 14px; color: #a0a4b8;">Pre-loaded Beelink mini PC shipped to the store. No IT department needed. Automatic updates every 6 hours. Remote support via secure tunnel.</p>
+        </div>
+        <div class="card card-dark" style="margin-bottom: 16px;">
+          <h3 class="accent-reefract">AI Architecture</h3>
+          <p style="font-size: 14px; color: #a0a4b8;">Multi-agent orchestrator: Intent Classifier &rarr; Strategy Planner &rarr; Category Intelligence &rarr; Brand Allocation &rarr; SKU Selection &rarr; Strategic Advisor. 96% token reduction vs. naive prompting.</p>
+        </div>
+        <div class="card card-dark">
+          <h3 class="accent-reefract">Pricing</h3>
+          <div class="pricing-row">
+            <span class="pricing-label">Hardware setup (one-time)</span>
+            <span class="pricing-value accent-reefract">$1,200</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-label">Monthly subscription</span>
+            <span class="pricing-value accent-reefract">$1,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Reefract Analytics</span><span>4</span></div>
+</div>
+
+<!-- ============================================ -->
+<!-- REEFRACT — REPORTS & EXPORTS -->
+<!-- ============================================ -->
+<div class="page page-reefract">
+  <div class="container">
+    <a href="https://reefract.ai" class="logo-link" target="_blank"><img src="reefract-logo.png" class="logo-img" alt="Reefract"></a>
+    <h2>Reports, Alerts &amp; Data Export</h2>
+    <p class="subtitle" style="max-width: 600px;">Ask for any report in plain English. Reefract builds it, schedules it, and delivers it &mdash; no SQL knowledge, no spreadsheets, no BI tool.</p>
+    <div class="divider" style="background: #3b82f6;"></div>
+
+    <div class="grid-2" style="margin-top: 24px;">
+      <div>
+        <h3 style="margin-bottom: 16px;">Natural Language &rarr; Automated Report</h3>
+        <!-- Chat mockup -->
+        <div class="chat-bubble chat-slide">&ldquo;Send me yesterday&rsquo;s sales summary every morning at 9am&rdquo;</div>
+        <div class="chat-response chat-slide-right">Done. I&rsquo;ve created a scheduled report that runs daily at 9:00 AM and emails you the previous day&rsquo;s sales breakdown by category, total revenue, and top 10 products.</div>
+        <div class="chat-bubble" style="margin-top: 16px;">&ldquo;Alert me when any product drops below 5 units in stock&rdquo;</div>
+        <div class="chat-response chat-slide-right">Alert created. I&rsquo;ll check inventory after every sync and notify you immediately if any active SKU falls below 5 units.</div>
+        <div class="chat-bubble" style="margin-top: 16px;">&ldquo;Export all flower sales from last month as a CSV&rdquo;</div>
+        <div class="chat-response chat-slide-right">CSV ready &mdash; 847 rows. You can view it in-browser, download the file, or I can email it to you.</div>
+      </div>
+      <div>
+        <div class="card card-dark" style="margin-bottom: 16px;">
+          <h3 class="accent-reefract">Scheduled Reports</h3>
+          <p style="font-size: 14px; color: #a0a4b8; margin-bottom: 8px;">Request any recurring report in plain English. Reefract generates the query, sets the cron schedule, and emails formatted HTML results on time &mdash; daily, weekly, or monthly.</p>
+          <p style="font-size: 13px; color: #6b7280; font-style: italic;">&ldquo;Create a weekly revenue report sent every Monday&rdquo;</p>
+        </div>
+        <div class="card card-dark" style="margin-bottom: 16px;">
+          <h3 class="accent-reefract">Smart Alerts</h3>
+          <p style="font-size: 14px; color: #a0a4b8; margin-bottom: 8px;">Condition-triggered notifications checked after every data sync. Stock alerts, sales anomaly detection, void monitoring, margin drops &mdash; all defined in natural language.</p>
+          <p style="font-size: 13px; color: #6b7280; font-style: italic;">&ldquo;Notify me whenever a transaction over $500 is voided&rdquo;</p>
+        </div>
+        <div class="card card-dark" style="margin-bottom: 16px;">
+          <h3 class="accent-reefract">CSV Query &amp; Export</h3>
+          <p style="font-size: 14px; color: #a0a4b8; margin-bottom: 8px;">Ask for any data slice and get a downloadable CSV instantly. View in a sortable in-browser table, download the file, or email it directly &mdash; all from the chat.</p>
+          <p style="font-size: 13px; color: #6b7280; font-style: italic;">&ldquo;Give me a spreadsheet of all products with zero sales this month&rdquo;</p>
+        </div>
+        <div class="card card-dark">
+          <h3 class="accent-reefract">Visual Charts</h3>
+          <p style="font-size: 14px; color: #a0a4b8; margin-bottom: 8px;">Generate bar, line, pie, scatter, heatmap, and 3D charts inline in the conversation. Download as image or let the AI interpret the visualization for you.</p>
+          <p style="font-size: 13px; color: #6b7280; font-style: italic;">&ldquo;Show me a pie chart of revenue by category this quarter&rdquo;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Reefract Analytics &mdash; Reports</span><span>5</span></div>
+</div>
+
+<!-- ============================================ -->
+<!-- TEYRA — PROBLEM -->
+<!-- ============================================ -->
+<div class="page page-teyra">
+  <div class="container">
+    <a href="https://teyra.io" class="logo-link" target="_blank"><img src="teyra-logo.png" class="logo-img-lg" alt="Teyra"></a>
+    <h1 class="reveal">Turn regulars into<br><span class="accent-teyra">subscribers.</span></h1>
+    <p class="subtitle" style="max-width: 540px;">Retail stores &mdash; especially cannabis dispensaries &mdash; have loyal customers who visit weekly but no way to capture that loyalty as predictable, recurring revenue.</p>
+    <div class="grid-2" style="margin-top: 32px;">
+      <div class="problem">
+        <h3 style="color: #ef4444; margin-bottom: 8px;">The Problem</h3>
+        <ul class="feature-list" style="list-style: none; padding: 0;">
+          <li style="padding-left: 0;">Cannabis retailers can&rsquo;t use standard loyalty or gift card systems due to banking restrictions</li>
+          <li style="padding-left: 0;">Credit card processing is expensive or unavailable for cannabis</li>
+          <li style="padding-left: 0;">No turnkey way to offer subscription memberships with custom perks</li>
+          <li style="padding-left: 0;">Revenue is unpredictable &mdash; entirely dependent on foot traffic</li>
+        </ul>
+      </div>
+      <div class="solution">
+        <h3 style="color: #22c55e; margin-bottom: 8px;">Teyra&rsquo;s Answer</h3>
+        <ul class="feature-list" style="list-style: none; padding: 0;">
+          <li style="padding-left: 0;">Launch a branded membership program with custom perks in minutes &mdash; no POS integration, no hardware</li>
+          <li style="padding-left: 0;">ACH subscription billing bank-to-bank &mdash; bypasses card network restrictions entirely</li>
+          <li style="padding-left: 0;">Members enroll in under 60 seconds via QR code &rarr; phone OTP &rarr; bank link</li>
+          <li style="padding-left: 0;">Predictable MRR from your most loyal customers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Teyra</span><span>6</span></div>
+</div>
+
+<!-- ============================================ -->
+<!-- TEYRA — HOW IT WORKS -->
+<!-- ============================================ -->
+<div class="page page-teyra">
+  <div class="container">
+    <a href="https://teyra.io" class="logo-link" target="_blank"><img src="teyra-logo.png" class="logo-img" alt="Teyra"></a>
+    <h2 class="reveal">How It Works</h2>
+    <div class="divider" style="background: #a855f7;"></div>
+    <div class="grid-3 stagger" style="margin-top: 24px;">
+      <div class="card card-dark">
+        <h3 style="margin-bottom: 4px;">1. Store Setup</h3>
+        <p style="font-size: 14px; color: #a0a4b8;">Brand your portal with your logo, colors, and custom domain. Create membership tiers with pricing, discounts, and perks. Takes under 10 minutes.</p>
+      </div>
+      <div class="card card-dark">
+        <h3 style="margin-bottom: 4px;">2. Members Enroll</h3>
+        <p style="font-size: 14px; color: #a0a4b8;">Customer scans a QR code, verifies their phone with OTP, links their bank via Plaid, and picks a tier. No app download. Under 60 seconds.</p>
+      </div>
+      <div class="card card-dark">
+        <h3 style="margin-bottom: 4px;">3. Revenue Flows</h3>
+        <p style="font-size: 14px; color: #a0a4b8;">ACH payments auto-debit monthly via Dwolla. Staff verify members at checkout by phone number. Perks track and redeem automatically.</p>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top: 24px;">
+      <div>
+        <ul class="feature-list teyra">
+          <li><strong>White-label branding</strong> &mdash; your logo, colors, fonts, and custom domain</li>
+          <li><strong>Tiered memberships</strong> &mdash; unlimited tiers with custom pricing and perks</li>
+          <li><strong>Staff validation</strong> &mdash; phone number lookup to verify membership at checkout</li>
+          <li><strong>ACH payments</strong> &mdash; bank-to-bank, no card networks</li>
+          <li><strong>Member portal</strong> &mdash; digital membership card, perk tracking, billing history</li>
+          <li><strong>Real-time dashboard</strong> &mdash; MRR, churn, member growth, perk redemptions</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card card-dark" style="margin-bottom: 16px;">
+          <h3 class="accent-teyra">Pricing</h3>
+          <p style="font-size: 14px; color: #a0a4b8; margin-bottom: 16px;">Simple, usage-based pricing that scales with your membership program.</p>
+          <div class="pricing-row">
+            <span class="pricing-label">Per active subscriber</span>
+            <span class="pricing-value accent-teyra">$5/mo</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-label">Platform fee</span>
+            <span class="pricing-value accent-teyra">None</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-label">Setup</span>
+            <span class="pricing-value accent-teyra">Free</span>
+          </div>
+        </div>
+        <div class="card card-dark">
+          <h3 style="margin-bottom: 8px;">Revenue Example</h3>
+          <p style="font-size: 14px; color: #a0a4b8;">A dispensary with <strong style="color: #fff;">200 members</strong> paying $25&ndash;$50/month in membership fees generates <strong style="color: #a855f7;">$5,000&ndash;$10,000 MRR</strong> for the store. Teyra earns <strong style="color: #a855f7;">$1,000/mo</strong> &mdash; growing in lockstep with the store&rsquo;s success.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Teyra</span><span>7</span></div>
+</div>
+
+<!-- ============================================ -->
+<!-- BUDDYBOOST — PROBLEM -->
+<!-- ============================================ -->
+<div class="page page-boost">
+  <div class="container">
+    <a href="https://buddyboost.io" class="logo-link logo-text-boost logo-text-boost-lg" target="_blank">Buddy<span>Boost</span></a>
+    <h1 class="reveal">Sell it.<br><span class="accent-boost">Get paid.</span></h1>
+    <p class="subtitle" style="max-width: 540px;">Brands spend millions on trade marketing with no visibility into what actually moves at the store level. Staff have zero incentive to push one product over another.</p>
+    <div class="grid-2" style="margin-top: 32px;">
+      <div class="problem">
+        <h3 style="color: #ef4444; margin-bottom: 8px;">The Problem</h3>
+        <ul class="feature-list" style="list-style: none; padding: 0;">
+          <li style="padding-left: 0;">Brands can&rsquo;t see which staff are actually driving their sales</li>
+          <li style="padding-left: 0;">Store employees have no financial incentive to recommend specific products</li>
+          <li style="padding-left: 0;">Trade marketing budgets disappear into discounts with no attribution</li>
+          <li style="padding-left: 0;">Running spiffs manually is a nightmare of spreadsheets and disputes</li>
+        </ul>
+      </div>
+      <div class="solution">
+        <h3 style="color: #22c55e; margin-bottom: 8px;">BuddyBoost&rsquo;s Answer</h3>
+        <ul class="feature-list" style="list-style: none; padding: 0;">
+          <li style="padding-left: 0;">Brands create campaigns and fund rewards &mdash; $20k+/month flows through the platform per brand</li>
+          <li style="padding-left: 0;">Completely free for stores &mdash; just connect your POS and approve campaigns</li>
+          <li style="padding-left: 0;">Staff earn cash for every qualifying sale, matched automatically via POS data</li>
+          <li style="padding-left: 0;">BuddyBoost takes 3&ndash;10% of the reward flow &mdash; brands pay, everyone else benefits</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>BuddyBoost</span><span>8</span></div>
+</div>
+
+<!-- ============================================ -->
+<!-- BUDDYBOOST — HOW IT WORKS -->
+<!-- ============================================ -->
+<div class="page page-boost">
+  <div class="container">
+    <a href="https://buddyboost.io" class="logo-link logo-text-boost" target="_blank">Buddy<span>Boost</span></a>
+    <h2 class="reveal">How It Works</h2>
+    <div class="divider" style="background: #00E676;"></div>
+    <div class="grid-3 stagger" style="margin-top: 24px;">
+      <div class="card card-dark">
+        <h3 style="margin-bottom: 4px;">1. Brands Fund</h3>
+        <p style="font-size: 14px; color: #a0a4b8;">Create a campaign, set product rules (per-unit, per-dollar, tiered), choose target stores, and deposit budget. Full control over spend.</p>
+      </div>
+      <div class="card card-dark">
+        <h3 style="margin-bottom: 4px;">2. Stores Approve</h3>
+        <p style="font-size: 14px; color: #a0a4b8;">Connect your POS (Dutchie). Review incoming campaigns. Approve the ones you want. Your staff start earning immediately.</p>
+      </div>
+      <div class="card card-dark">
+        <h3 style="margin-bottom: 4px;">3. Staff Earn</h3>
+        <p style="font-size: 14px; color: #a0a4b8;">Sell qualifying products. BuddyBoost matches each sale to active campaigns via POS data. Rewards land in your wallet automatically.</p>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top: 24px;">
+      <div>
+        <ul class="feature-list boost">
+          <li><strong>Automated matching</strong> &mdash; POS transactions matched to campaign rules by SKU, category, or brand</li>
+          <li><strong>Real-time wallets</strong> &mdash; staff see earnings as they happen</li>
+          <li><strong>Brand analytics</strong> &mdash; see exactly which staff, stores, and products drive ROI</li>
+          <li><strong>Invite system</strong> &mdash; unique codes link POS employees to BuddyBoost accounts</li>
+          <li><strong>Flexible rules</strong> &mdash; per-unit, per-dollar, threshold, tiered, and category-based rewards</li>
+          <li><strong>Instant or standard cashout</strong> &mdash; staff choose speed vs. fee</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card card-dark">
+          <h3 class="accent-boost">Pricing</h3>
+          <div class="pricing-row">
+            <span class="pricing-label">Platform fee on reward flow</span>
+            <span class="pricing-value accent-boost">3&ndash;10%</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-label">Stores</span>
+            <span class="pricing-value accent-boost">Free</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-label">Staff</span>
+            <span class="pricing-value accent-boost">Free</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>BuddyBoost</span><span>9</span></div>
+</div>
+
+<!-- ============================================ -->
+<!-- CROSS-SELL / MOAT -->
+<!-- ============================================ -->
+<div class="page page-dark">
+  <div class="container">
+    <h2 class="reveal">The Flywheel</h2>
+    <p class="subtitle reveal" style="max-width: 560px;">Each product deepens the relationship with the same customer. A dispensary that uses one product is a warm lead for the other two. Together, they create a switching cost no single-product competitor can match.</p>
+    <div class="grid-3 stagger" style="margin-top: 32px;">
+      <div class="stat">
+        <a href="https://reefract.ai" class="logo-link" target="_blank"><img src="reefract-logo.png" alt="Reefract" style="height: 32px; margin: 0 auto 12px; display: block;"></a>
+        <div class="stat-label" style="font-size: 14px; text-transform: none; color: #a0a4b8; margin-top: 12px;">Lands the account with analytics. The operator sees which products are winning &mdash; and wonders how to push more of them.</div>
+      </div>
+      <div class="stat">
+        <a href="https://buddyboost.io" class="logo-link logo-text-boost-sm" style="display: block; text-align: center; margin-bottom: 12px;" target="_blank">Buddy<span>Boost</span></a>
+        <div class="stat-label" style="font-size: 14px; text-transform: none; color: #a0a4b8; margin-top: 12px;">Activates the staff. Brands fund campaigns for the winning products Reefract identified. Sales lift is measurable.</div>
+      </div>
+      <div class="stat">
+        <a href="https://teyra.io" class="logo-link" target="_blank"><img src="teyra-logo.png" alt="Teyra" style="height: 32px; margin: 0 auto 12px; display: block;"></a>
+        <div class="stat-label" style="font-size: 14px; text-transform: none; color: #a0a4b8; margin-top: 12px;">Locks in the customer. Membership programs create recurring revenue and reduce churn. The store becomes sticky.</div>
+      </div>
+    </div>
+    <div class="card card-dark card-pop" style="margin-top: 40px; text-align: center; padding: 32px;">
+      <h3 style="margin-bottom: 8px;">Combined Revenue per Account</h3>
+      <p style="color: #a0a4b8; font-size: 14px; margin-bottom: 20px;">One dispensary (200 members) + one brand ($20k/mo reward flow)</p>
+      <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+        <div class="stat">
+          <div class="stat-number accent-reefract" style="font-size: 28px;">$1,000</div>
+          <div class="stat-label">Reefract</div>
+        </div>
+        <div style="font-size: 28px; font-weight: 800; color: #555; align-self: center;">+</div>
+        <div class="stat">
+          <div class="stat-number accent-teyra" style="font-size: 28px;">$1,000</div>
+          <div class="stat-label">Teyra (200 &times; $5)</div>
+        </div>
+        <div style="font-size: 28px; font-weight: 800; color: #555; align-self: center;">+</div>
+        <div class="stat">
+          <div class="stat-number accent-boost" style="font-size: 28px;">$600&ndash;$2,000</div>
+          <div class="stat-label">BuddyBoost (3&ndash;10%)</div>
+        </div>
+        <div style="font-size: 28px; font-weight: 800; color: #555; align-self: center;">=</div>
+        <div class="stat">
+          <div class="stat-number accent-white" style="font-size: 28px;">$2,600&ndash;$4,000</div>
+          <div class="stat-label">MRR / account</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>The Flywheel</span><span>10</span></div>
+</div>
+
+<!-- ============================================ -->
+<!-- FOUNDER -->
+<!-- ============================================ -->
+<div class="page page-dark">
+  <div class="container" style="text-align: center;">
+    <h2 style="margin-bottom: 8px;">Jason Morris</h2>
+    <p class="subtitle">Founder &amp; Builder</p>
+    <div class="divider" style="background: #555; margin: 24px auto;"></div>
+    <p style="max-width: 520px; margin: 0 auto 40px; font-size: 16px; color: #a0a4b8;">Full-stack engineer and solo founder building vertically integrated SaaS for retail. Three products, three LLCs, one person shipping production code across AI, payments, and hardware.</p>
+    <div class="grid-3">
+      <div class="card card-dark" style="text-align: center;">
+        <a href="https://reefract.ai" class="logo-link" target="_blank"><img src="reefract-logo.png" alt="Reefract" style="height: 36px; margin: 0 auto 12px; display: block;"></a>
+        <div class="stat-number accent-reefract" style="font-size: 18px;">Reefract Analytics LLC</div>
+        <div class="stat-label">Michigan LLC</div>
+      </div>
+      <div class="card card-dark" style="text-align: center;">
+        <a href="https://teyra.io" class="logo-link" target="_blank"><img src="teyra-logo.png" alt="Teyra" style="height: 36px; margin: 0 auto 12px; display: block;"></a>
+        <div class="stat-number accent-teyra" style="font-size: 18px;">Teyra LLC</div>
+        <div class="stat-label">Michigan LLC</div>
+      </div>
+      <div class="card card-dark" style="text-align: center;">
+        <a href="https://buddyboost.io" class="logo-link logo-text-boost-sm" style="display: block; text-align: center; margin-bottom: 12px;" target="_blank">Buddy<span>Boost</span></a>
+        <div class="stat-number accent-boost" style="font-size: 18px;">BuddyBoost LLC</div>
+        <div class="stat-label">Michigan LLC</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Founder</span><span>11</span></div>
+</div>
+
+<!-- ============================================ -->
+<!-- CONTACT / CLOSE -->
+<!-- ============================================ -->
+<div class="page page-dark" style="text-align: center;">
+  <div class="container">
+    <h1 class="reveal" style="font-size: 52px; margin-bottom: 24px;">Let&rsquo;s talk.</h1>
+    <p class="reveal" style="font-size: 18px; color: #a0a4b8; max-width: 480px; margin: 0 auto 40px;">Whether you&rsquo;re a dispensary operator, a brand looking for retail activation, or an investor &mdash; I&rsquo;d love to connect.</p>
+    <div class="reveal" style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+      <p style="font-size: 16px;"><strong>Jason Morris</strong></p>
+      <p style="font-size: 15px; color: #a0a4b8;"><span class="field" style="color: #3b82f6;">[EMAIL]</span></p>
+      <p style="font-size: 15px; color: #a0a4b8;"><span class="field" style="color: #3b82f6;">[PHONE]</span></p>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 32px; margin-top: 48px;">
+      <a href="https://reefract.ai" class="logo-link" target="_blank"><img src="reefract-logo.png" alt="Reefract" style="height: 28px;"></a>
+      <a href="https://teyra.io" class="logo-link" target="_blank"><img src="teyra-logo.png" alt="Teyra" style="height: 28px;"></a>
+      <a href="https://buddyboost.io" class="logo-link logo-text-boost-sm" style="margin-bottom: 0;" target="_blank">Buddy<span>Boost</span></a>
+    </div>
+  </div>
+  <div class="page-footer"><span>Confidential</span><span>12</span></div>
+</div>
+
+<script>
+// Intersection Observer for scroll-triggered animations
+document.addEventListener('DOMContentLoaded', () => {
+  const selectors = '.reveal, .stagger, .card-pop, .chat-slide, .chat-slide-right';
+  const els = document.querySelectorAll(selectors);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  els.forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>
