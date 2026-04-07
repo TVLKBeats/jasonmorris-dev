@@ -462,6 +462,143 @@
     .header-cta { padding: 6px 14px; font-size: 11px; }
   }
 
+  /* ===== HERO CAROUSEL ===== */
+  .hero-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+  .hero-carousel-wrapper::before,
+  .hero-carousel-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .hero-carousel-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #0f1115, transparent);
+  }
+  .hero-carousel-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #0f1115, transparent);
+  }
+
+  .hero-carousel-track {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    width: max-content;
+    animation: carouselScroll 18s linear infinite;
+  }
+
+  .hero-carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+    min-width: 320px;
+  }
+  .hero-carousel-item img {
+    height: 80px;
+    width: auto;
+  }
+  .hero-carousel-item .carousel-tagline {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    letter-spacing: -0.3px;
+  }
+  .hero-carousel-item .logo-text-boost-carousel {
+    font-family: "Sora", -apple-system, sans-serif;
+    font-weight: 800;
+    font-size: 42px;
+    letter-spacing: -0.5px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .hero-carousel-item .logo-text-boost-carousel span {
+    color: #00E676;
+  }
+
+  @keyframes carouselScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* Pause on hover */
+  .hero-carousel-wrapper:hover .hero-carousel-track {
+    animation-play-state: paused;
+  }
+
+  @media (max-width: 768px) {
+    .hero-carousel-item {
+      min-width: 240px;
+      gap: 12px;
+    }
+    .hero-carousel-item img {
+      height: 56px;
+    }
+    .hero-carousel-item .carousel-tagline {
+      font-size: 17px;
+    }
+    .hero-carousel-item .logo-text-boost-carousel {
+      font-size: 32px;
+    }
+    .hero-carousel-track {
+      gap: 48px;
+    }
+    .hero-carousel-wrapper::before,
+    .hero-carousel-wrapper::after {
+      width: 40px;
+    }
+
+    .hero-name {
+      font-size: 36px !important;
+    }
+    .hero-role {
+      font-size: 15px !important;
+    }
+    .hero-status-bar {
+      flex-wrap: wrap;
+      gap: 16px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-carousel-item {
+      min-width: 200px;
+      gap: 10px;
+    }
+    .hero-carousel-item img {
+      height: 44px;
+    }
+    .hero-carousel-item .carousel-tagline {
+      font-size: 15px;
+    }
+    .hero-carousel-item .logo-text-boost-carousel {
+      font-size: 26px;
+    }
+    .hero-carousel-track {
+      gap: 36px;
+      animation-duration: 14s;
+    }
+    .hero-name {
+      font-size: 28px !important;
+    }
+    .hero-role {
+      font-size: 13px !important;
+    }
+  }
+
   /* Reduce motion for accessibility */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -469,6 +606,7 @@
       transition-duration: 0.01ms !important;
     }
     .reveal, .stagger > *, .card-pop, .chat-slide, .chat-slide-right { opacity: 1; transform: none; }
+    .hero-carousel-track { animation: none; }
   }
 </style>
 </head>
@@ -489,26 +627,50 @@
 <!-- ============================================ -->
 <!-- COVER / HERO -->
 <!-- ============================================ -->
-<div class="page page-dark" style="overflow: hidden;">
+<div class="page page-dark" style="overflow: hidden; display: flex; align-items: center; justify-content: center;">
   <div class="hero-bg">
     <div class="hero-orb-green"></div>
     <div class="hero-grid"></div>
   </div>
-  <div class="container" style="position: relative; z-index: 1;">
-    <p class="hero-tag-anim" style="font-size: 13px; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 48px;">Jason Morris &mdash; Founder &amp; Solo Builder</p>
-    <h1 class="hero-headline">Three products.<br><span class="glow-text">One vision.</span></h1>
-    <p class="subtitle hero-subtitle-anim" style="max-width: 580px; font-size: 21px; line-height: 1.6;">
-      A vertically integrated software portfolio that gives retail operators the tools to
-      <strong style="color: #3b82f6;">understand their business</strong>,
-      <strong style="color: #a855f7;">grow recurring revenue</strong>, and
-      <strong style="color: #00E676;">incentivize their people</strong>.
-    </p>
-    <div class="hero-logos-anim" style="display: flex; align-items: center; gap: 36px; margin-top: 52px;">
-      <a href="https://reefract.ai" class="logo-link" target="_blank"><img src="reefract-logo.png" class="logo-img-sm" alt="Reefract Analytics" style="height: 44px;"></a>
-      <a href="https://teyra.io" class="logo-link" target="_blank"><img src="teyra-logo.png" class="logo-img-sm" alt="Teyra" style="height: 44px;"></a>
-      <a href="https://buddyboost.io" class="logo-link logo-text-boost-sm" target="_blank">Buddy<span>Boost</span></a>
+  <div style="position: relative; z-index: 1; width: 100%; text-align: center;">
+    <div class="hero-tag-anim" style="margin-bottom: 32px;">
+      <h1 class="hero-name" style="font-family: 'Sora', sans-serif; font-size: 52px; font-weight: 800; color: #fff; letter-spacing: -1.5px; margin-bottom: 8px; line-height: 1.1;">Jason Morris</h1>
+      <p class="hero-role" style="font-size: 17px; text-transform: uppercase; letter-spacing: 4px; color: #555;">Founder &amp; Solo Builder</p>
     </div>
-    <div class="hero-logos-anim" style="margin-top: 48px; display: flex; gap: 32px; align-items: center;">
+
+    <!-- Infinite Carousel -->
+    <div class="hero-carousel-wrapper hero-subtitle-anim">
+      <div class="hero-carousel-track">
+        <!-- Set 1 -->
+        <div class="hero-carousel-item">
+          <a href="https://reefract.ai" target="_blank"><img src="reefract-logo.png" alt="Reefract Analytics"></a>
+          <div class="carousel-tagline" style="color: #3b82f6;">Understand your business.</div>
+        </div>
+        <div class="hero-carousel-item">
+          <a href="https://teyra.io" target="_blank"><img src="teyra-logo.png" alt="Teyra"></a>
+          <div class="carousel-tagline" style="color: #a855f7;">Grow recurring revenue.</div>
+        </div>
+        <div class="hero-carousel-item">
+          <a href="https://buddyboost.io" target="_blank"><span class="logo-text-boost-carousel">Buddy<span>Boost</span></span></a>
+          <div class="carousel-tagline" style="color: #00E676;">Incentivize your people.</div>
+        </div>
+        <!-- Set 2 (duplicate for seamless loop) -->
+        <div class="hero-carousel-item">
+          <a href="https://reefract.ai" target="_blank"><img src="reefract-logo.png" alt="Reefract Analytics"></a>
+          <div class="carousel-tagline" style="color: #3b82f6;">Understand your business.</div>
+        </div>
+        <div class="hero-carousel-item">
+          <a href="https://teyra.io" target="_blank"><img src="teyra-logo.png" alt="Teyra"></a>
+          <div class="carousel-tagline" style="color: #a855f7;">Grow recurring revenue.</div>
+        </div>
+        <div class="hero-carousel-item">
+          <a href="https://buddyboost.io" target="_blank"><span class="logo-text-boost-carousel">Buddy<span>Boost</span></span></a>
+          <div class="carousel-tagline" style="color: #00E676;">Incentivize your people.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-logos-anim hero-status-bar" style="margin-top: 48px; display: flex; gap: 32px; align-items: center; justify-content: center;">
       <div style="display: flex; align-items: center; gap: 8px;">
         <div style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e;"></div>
         <span style="font-size: 13px; color: #6b7280; letter-spacing: 0.5px;">3 live products</span>
