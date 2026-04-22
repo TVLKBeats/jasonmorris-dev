@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jason Morris — Retail Software Portfolio</title>
-<meta name="description" content="Three products. One vision. AI analytics, membership platforms, and sales incentives for retail operators.">
+<meta name="description" content="Five products. One vision. AI analytics, membership platforms, sales incentives, luxury jewelry, and agentic inbox.">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Jason Morris — Retail Software Portfolio">
-<meta property="og:description" content="Three products. One vision. AI analytics, membership platforms, and sales incentives for retail operators.">
+<meta property="og:description" content="Five products. One vision. AI analytics, membership platforms, sales incentives, luxury jewelry, and agentic inbox.">
 <meta property="og:image" content="https://jasonmorris.dev/og-image.png">
 <meta property="og:url" content="https://jasonmorris.dev">
 <meta property="og:type" content="website">
@@ -16,9 +16,9 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Jason Morris — Retail Software Portfolio">
-<meta name="twitter:description" content="Three products. One vision. AI analytics, membership platforms, and sales incentives for retail operators.">
+<meta name="twitter:description" content="Five products. One vision. AI analytics, membership platforms, sales incentives, luxury jewelry, and agentic inbox.">
 <meta name="twitter:image" content="https://jasonmorris.dev/og-image.png">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 15px; line-height: 1.7; color: #1a1a1a; background: #fff; }
@@ -29,6 +29,8 @@
   .page-reefract { background: linear-gradient(135deg, #0a1628 0%, #0f1f3d 100%); color: #f5f7fa; }
   .page-teyra { background: linear-gradient(135deg, #1a0a2e 0%, #2d1450 100%); color: #f5f7fa; }
   .page-boost { background: linear-gradient(135deg, #0a1a10 0%, #0f1115 100%); color: #f5f7fa; }
+  .page-heron { background: linear-gradient(135deg, #0a1a1e 0%, #0c2428 100%); color: #f5f7fa; }
+  .page-culled { background: linear-gradient(135deg, #1a0a0a 0%, #2d1010 100%); color: #f5f7fa; }
 
   .container { max-width: 960px; margin: 0 auto; width: 100%; }
 
@@ -37,18 +39,22 @@
   h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 12px; }
   h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
   .subtitle { font-size: 20px; color: #888; line-height: 1.5; margin-bottom: 32px; }
-  .page-dark .subtitle, .page-reefract .subtitle, .page-teyra .subtitle, .page-boost .subtitle { color: #a0a4b8; }
+  .page-dark .subtitle, .page-reefract .subtitle, .page-teyra .subtitle, .page-boost .subtitle, .page-heron .subtitle, .page-culled .subtitle { color: #a0a4b8; }
 
   /* Accent colors */
   .accent-reefract { color: #3b82f6; }
   .accent-teyra { color: #a855f7; }
   .accent-boost { color: #00E676; }
+  .accent-heron { color: #2a7a78; }
+  .accent-culled { color: #ef4444; }
   .accent-white { color: #fff; }
 
   .pill { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; padding: 4px 14px; border-radius: 20px; margin-bottom: 20px; }
   .pill-reefract { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
   .pill-teyra { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
   .pill-boost { background: rgba(0, 230, 118, 0.15); color: #00E676; }
+  .pill-heron { background: rgba(42, 122, 120, 0.15); color: #2a7a78; }
+  .pill-culled { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
 
   /* Logos */
   .logo-img { height: 48px; width: auto; margin-bottom: 16px; display: block; }
@@ -58,6 +64,17 @@
   .logo-text-boost span, a.logo-text-boost span, a.logo-text-boost-sm span, a.logo-text-boost-lg span { color: #00E676 !important; }
   .logo-text-boost-lg, a.logo-text-boost-lg { font-size: 36px; margin-bottom: 20px; }
   .logo-text-boost-sm, a.logo-text-boost-sm { font-size: 22px; margin-bottom: 0; }
+
+  /* Heron logo text */
+  .logo-text-heron, a.logo-text-heron, a.logo-text-heron-sm, a.logo-text-heron-lg { font-family: "Playfair Display", "Georgia", serif; font-weight: 700; font-size: 28px; letter-spacing: 4px; color: #2a7a78 !important; margin-bottom: 16px; display: inline-block; text-decoration: none !important; }
+  .logo-text-heron-lg, a.logo-text-heron-lg { font-size: 36px; margin-bottom: 20px; letter-spacing: 6px; }
+  .logo-text-heron-sm, a.logo-text-heron-sm { font-size: 16px; margin-bottom: 0; letter-spacing: 3px; }
+
+  /* Culled logo text */
+  .logo-text-culled, a.logo-text-culled, a.logo-text-culled-sm, a.logo-text-culled-lg { font-family: "Sora", -apple-system, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.5px; color: #fff !important; margin-bottom: 16px; display: inline-block; text-decoration: none !important; }
+  .logo-text-culled span, a.logo-text-culled span, a.logo-text-culled-sm span, a.logo-text-culled-lg span { color: #ef4444 !important; }
+  .logo-text-culled-lg, a.logo-text-culled-lg { font-size: 36px; margin-bottom: 20px; }
+  .logo-text-culled-sm, a.logo-text-culled-sm { font-size: 16px; margin-bottom: 0; }
 
   /* Logo links */
   a.logo-link { text-decoration: none; display: inline-block; }
@@ -83,6 +100,8 @@
   .feature-list.reefract li::before { background: #3b82f6; }
   .feature-list.teyra li::before { background: #a855f7; }
   .feature-list.boost li::before { background: #00E676; }
+  .feature-list.heron li::before { background: #2a7a78; }
+  .feature-list.culled li::before { background: #ef4444; }
 
   /* Problem/solution */
   .problem { padding: 24px; border-left: 4px solid #ef4444; background: rgba(239, 68, 68, 0.08); border-radius: 0 8px 8px 0; margin-bottom: 16px; }
@@ -412,6 +431,10 @@
   .header-logos img { height: 22px; width: auto; }
   .header-logos .logo-text-boost-sm { font-size: 16px; margin-bottom: 0; opacity: 0.6; transition: opacity 0.2s ease; }
   .header-logos .logo-text-boost-sm:hover { opacity: 1; }
+  .header-logos .logo-text-heron-sm { font-size: 14px; margin-bottom: 0; }
+  .header-logos .logo-text-heron-sm:hover { opacity: 1; }
+  .header-logos .logo-text-culled-sm { font-size: 14px; margin-bottom: 0; }
+  .header-logos .logo-text-culled-sm:hover { opacity: 1; }
 
   .header-spacer { flex: 1; }
 
@@ -445,6 +468,8 @@
     .hero-headline { font-size: 42px !important; }
     h2 { font-size: 24px; }
     .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .stagger[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
     .page-footer { left: 24px; right: 24px; }
 
     .site-header { padding: 0 16px; height: 56px; }
@@ -480,7 +505,7 @@
     align-items: center;
     gap: 80px;
     width: max-content;
-    animation: carouselScroll 18s linear infinite;
+    animation: carouselScroll 30s linear infinite;
   }
 
   .hero-carousel-item {
@@ -600,6 +625,8 @@
     <a href="https://reefract.ai" target="_blank"><img src="reefract-logo.png" alt="Reefract"></a>
     <a href="https://teyra.io" target="_blank"><img src="teyra-logo.png" alt="Teyra"></a>
     <a href="https://buddyboost.io" target="_blank" class="logo-text-boost-sm" style="font-family:'Sora',sans-serif;font-weight:800;color:#fff;text-decoration:none;">Buddy<span style="color:#00E676;">Boost</span></a>
+    <a href="https://heroncollection.com" target="_blank" class="logo-text-heron-sm" style="opacity:0.6;transition:opacity 0.2s ease;">HERON</a>
+    <a href="https://culled.ai" target="_blank" class="logo-text-culled-sm" style="opacity:0.6;transition:opacity 0.2s ease;">Culled<span>.ai</span></a>
   </div>
   <div class="header-spacer"></div>
   <a href="#contact" class="header-cta">Get in Touch</a>
@@ -635,6 +662,14 @@
           <a href="https://buddyboost.io" target="_blank"><span class="logo-text-boost-carousel">Buddy<span>Boost</span></span></a>
           <div class="carousel-tagline" style="color: #00E676;">Incentivize your people.</div>
         </div>
+        <div class="hero-carousel-item">
+          <a href="https://heroncollection.com" target="_blank"><span style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:42px;letter-spacing:4px;color:#2a7a78;text-decoration:none;">HERON</span></a>
+          <div class="carousel-tagline" style="color: #2a7a78;">Wear what responds to light.</div>
+        </div>
+        <div class="hero-carousel-item">
+          <a href="https://culled.ai" target="_blank"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:42px;letter-spacing:-0.5px;color:#fff;text-decoration:none;">Culled<span style="color:#ef4444;">.ai</span></span></a>
+          <div class="carousel-tagline" style="color: #ef4444;">Only what matters.</div>
+        </div>
         <!-- Set 2 (duplicate for seamless loop) -->
         <div class="hero-carousel-item">
           <a href="https://reefract.ai" target="_blank"><img src="reefract-logo.png" alt="Reefract Analytics"></a>
@@ -648,17 +683,25 @@
           <a href="https://buddyboost.io" target="_blank"><span class="logo-text-boost-carousel">Buddy<span>Boost</span></span></a>
           <div class="carousel-tagline" style="color: #00E676;">Incentivize your people.</div>
         </div>
+        <div class="hero-carousel-item">
+          <a href="https://heroncollection.com" target="_blank"><span style="font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:42px;letter-spacing:4px;color:#2a7a78;text-decoration:none;">HERON</span></a>
+          <div class="carousel-tagline" style="color: #2a7a78;">Wear what responds to light.</div>
+        </div>
+        <div class="hero-carousel-item">
+          <a href="https://culled.ai" target="_blank"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:42px;letter-spacing:-0.5px;color:#fff;text-decoration:none;">Culled<span style="color:#ef4444;">.ai</span></span></a>
+          <div class="carousel-tagline" style="color: #ef4444;">Only what matters.</div>
+        </div>
       </div>
     </div>
 
     <div class="hero-logos-anim hero-status-bar" style="margin-top: 48px; display: flex; gap: 32px; align-items: center; justify-content: center;">
       <div style="display: flex; align-items: center; gap: 8px;">
         <div style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e;"></div>
-        <span style="font-size: 13px; color: #6b7280; letter-spacing: 0.5px;">3 live products</span>
+        <span style="font-size: 13px; color: #6b7280; letter-spacing: 0.5px;">5 live products</span>
       </div>
       <div style="display: flex; align-items: center; gap: 8px;">
         <div style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e;"></div>
-        <span style="font-size: 13px; color: #6b7280; letter-spacing: 0.5px;">3 LLCs</span>
+        <span style="font-size: 13px; color: #6b7280; letter-spacing: 0.5px;">5 LLCs</span>
       </div>
       <div style="display: flex; align-items: center; gap: 8px;">
         <div style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e;"></div>
@@ -675,8 +718,8 @@
 <div class="page page-dark">
   <div class="container">
     <h2 class="reveal">The Portfolio</h2>
-    <p class="subtitle reveal">Three SaaS products that serve retail operators at different points in their growth journey &mdash; from data intelligence to customer retention to team performance.</p>
-    <div class="grid-3 stagger">
+    <p class="subtitle reveal">Five products spanning retail analytics, customer retention, team incentives, luxury goods, and AI productivity &mdash; each built from scratch by a single founder.</p>
+    <div class="stagger" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 24px 0;">
       <div class="card card-dark" style="border-top: 3px solid #3b82f6;">
         <a href="https://reefract.ai" class="logo-link" target="_blank"><img src="reefract-logo.png" class="logo-img" alt="Reefract" style="height: 40px;"></a>
         <p style="font-size: 14px; color: #a0a4b8; margin-bottom: 12px;">Understand Your Business</p>
@@ -694,6 +737,16 @@
         <p style="font-size: 14px; color: #a0a4b8; margin-bottom: 12px;">Incentivize Your People</p>
         <p style="font-size: 14px;">Brands fund campaigns, stores approve them, staff earn cash rewards for every qualifying sale &mdash; automatically matched via POS data.</p>
         <p style="margin-top: 16px; font-size: 13px; color: #00E676; font-weight: 600;">Free for stores &bull; 3&ndash;10% on reward flow</p>
+      </div>
+      <div class="card card-dark" style="border-top: 3px solid #2a7a78;">
+        <a href="https://heroncollection.com" class="logo-link logo-text-heron" style="font-size: 22px; margin-bottom: 12px; letter-spacing: 3px;" target="_blank">HERON</a>
+        <p style="font-size: 14px; color: #a0a4b8; margin-bottom: 12px;">Wear What Responds to Light</p>
+        <p style="font-size: 14px;">Rare hex-cut Alexandrite jewelry &mdash; tennis necklaces and bracelets featuring precision-engineered color-changing gemstones sourced from U.S. aerospace-grade crystal.</p>
+      </div>
+      <div class="card card-dark" style="border-top: 3px solid #ef4444;">
+        <a href="https://culled.ai" class="logo-link logo-text-culled" style="font-size: 22px; margin-bottom: 12px;" target="_blank">Culled<span>.ai</span></a>
+        <p style="font-size: 14px; color: #a0a4b8; margin-bottom: 12px;">Only What Matters</p>
+        <p style="font-size: 14px;">Agentic inbox that filters, sorts, and extracts action items from your messages &mdash; so you only see what requires your attention.</p>
       </div>
     </div>
   </div>
@@ -1005,6 +1058,164 @@
 </div>
 
 <!-- ============================================ -->
+<!-- HERON COLLECTION — PROBLEM -->
+<!-- ============================================ -->
+<div class="page page-heron">
+  <div class="container">
+    <a href="https://heroncollection.com" class="logo-link logo-text-heron logo-text-heron-lg" target="_blank">HERON</a>
+    <h1 class="reveal"><span class="accent-heron">Alexandrite</span> does not merely<br>reflect &mdash; it responds.</h1>
+    <p class="subtitle" style="max-width: 540px;">Rare hex-cut Alexandrite jewelry. Precision-engineered chrysoberyl crystal from U.S. defense and aerospace suppliers, cut into hexagonal brilliance.</p>
+    <div class="grid-2" style="margin-top: 32px;">
+      <div class="problem">
+        <h3 style="color: #ef4444; margin-bottom: 8px;">The Problem</h3>
+        <ul class="feature-list" style="list-style: none; padding: 0;">
+          <li style="padding-left: 0;">Luxury jewelry lacks innovation &mdash; stones don&rsquo;t change, designs don&rsquo;t evolve</li>
+          <li style="padding-left: 0;">The market is saturated with the same diamonds and gold</li>
+          <li style="padding-left: 0;">No major brand is building around rare, color-changing gemstones at scale</li>
+          <li style="padding-left: 0;">Consumers want something that feels alive &mdash; not static</li>
+        </ul>
+      </div>
+      <div class="solution">
+        <h3 style="color: #22c55e; margin-bottom: 8px;">Heron&rsquo;s Answer</h3>
+        <ul class="feature-list" style="list-style: none; padding: 0;">
+          <li style="padding-left: 0;">Alexandrite &mdash; rarer than diamond, changes color with every light</li>
+          <li style="padding-left: 0;">Hex-cut for maximum chromatic shift across the visible spectrum</li>
+          <li style="padding-left: 0;">Every 4th stone is a brilliant-cut diamond for contrast and fire</li>
+          <li style="padding-left: 0;">Aerospace-grade chrysoberyl crystal, jewelry perfected</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Heron Collection</span><span>10</span></div>
+</div>
+
+<!-- ============================================ -->
+<!-- HERON COLLECTION — HOW IT WORKS -->
+<!-- ============================================ -->
+<div class="page page-heron">
+  <div class="container">
+    <a href="https://heroncollection.com" class="logo-link logo-text-heron" target="_blank">HERON</a>
+    <h2 class="reveal">How It Works</h2>
+    <div class="divider" style="background: #2a7a78;"></div>
+    <div class="grid-3 stagger" style="margin-top: 24px;">
+      <div class="card card-dark">
+        <h3 style="margin-bottom: 4px;">1. Crystal Sourcing</h3>
+        <p style="font-size: 14px; color: #a0a4b8;">U.S. supplier of advanced optical chrysoberyl crystal used in aerospace and defense applications. Every stone is lab-verified for chromatic purity.</p>
+      </div>
+      <div class="card card-dark">
+        <h3 style="margin-bottom: 4px;">2. Hex Cutting</h3>
+        <p style="font-size: 14px; color: #a0a4b8;">Proprietary hexagonal cut engineered for maximum color-change across the visible spectrum. Each facet is precision-angled for optimal light response.</p>
+      </div>
+      <div class="card card-dark">
+        <h3 style="margin-bottom: 4px;">3. Handcrafted Assembly</h3>
+        <p style="font-size: 14px; color: #a0a4b8;">Each piece assembled by hand. Tennis necklaces and bracelets can be made to order. Every 4th setting holds a brilliant-cut diamond.</p>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top: 24px;">
+      <div>
+        <ul class="feature-list heron">
+          <li><strong>Color-changing gemstones</strong> &mdash; shifts from emerald green to ruby red depending on light source</li>
+          <li><strong>Hex-cut geometry</strong> &mdash; proprietary hexagonal faceting maximizes chromatic shift</li>
+          <li><strong>Diamond accents</strong> &mdash; every 4th stone is a brilliant-cut diamond for contrast</li>
+          <li><strong>Aerospace-grade crystal</strong> &mdash; sourced from U.S. defense and optical suppliers</li>
+          <li><strong>Made to order</strong> &mdash; custom lengths, configurations, and stone counts available</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card card-dark" style="margin-bottom: 16px;">
+          <h3 class="accent-heron">The Stone</h3>
+          <p style="font-size: 14px; color: #a0a4b8;">Alexandrite is one of the rarest gemstones on Earth &mdash; a variety of chrysoberyl that exhibits dramatic color change under different lighting. Natural Alexandrite is rarer than diamond, emerald, or ruby.</p>
+        </div>
+        <div class="card card-dark">
+          <h3 class="accent-heron">The Collection</h3>
+          <p style="font-size: 14px; color: #a0a4b8;">Tennis necklaces and bracelets featuring hex-cut Alexandrite stones interspersed with brilliant-cut diamonds. Each piece is handcrafted and available made to order.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Heron Collection</span><span>11</span></div>
+</div>
+
+<!-- ============================================ -->
+<!-- CULLED.AI — FULL SECTION -->
+<!-- ============================================ -->
+<div class="page page-culled">
+  <div class="container">
+    <a href="https://culled.ai" class="logo-link logo-text-culled logo-text-culled-lg" target="_blank">Culled<span>.ai</span></a>
+    <h1 class="reveal"><span class="accent-culled">Only</span> what<br>matters.</h1>
+    <p class="subtitle" style="max-width: 540px;">Your agentic inbox. Multiple AI agents filter, sort, and extract action items from your messages &mdash; so all you see are the things that require your attention.</p>
+    <div class="grid-2" style="margin-top: 32px;">
+      <div class="problem">
+        <h3 style="color: #ef4444; margin-bottom: 8px;">The Problem</h3>
+        <ul class="feature-list" style="list-style: none; padding: 0;">
+          <li style="padding-left: 0;">Inboxes are flooded &mdash; email, Slack, texts, and messaging apps all compete for attention</li>
+          <li style="padding-left: 0;">Important action items are buried under noise, newsletters, and FYIs</li>
+          <li style="padding-left: 0;">Context-switching between apps wastes hours every day</li>
+          <li style="padding-left: 0;">No tool unifies messages across platforms and extracts what actually needs a response</li>
+        </ul>
+      </div>
+      <div class="solution">
+        <h3 style="color: #22c55e; margin-bottom: 8px;">Culled&rsquo;s Answer</h3>
+        <ul class="feature-list" style="list-style: none; padding: 0;">
+          <li style="padding-left: 0;">Connect all your messaging sources &mdash; email, Slack, texts, and more</li>
+          <li style="padding-left: 0;">AI agents classify every message by urgency and action required</li>
+          <li style="padding-left: 0;">Action items are extracted and surfaced in a unified feed</li>
+          <li style="padding-left: 0;">Daily digest or real-time &mdash; only what requires your attention</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Culled.ai</span><span>12</span></div>
+</div>
+
+<!-- ============================================ -->
+<!-- CULLED.AI — HOW IT WORKS -->
+<!-- ============================================ -->
+<div class="page page-culled">
+  <div class="container">
+    <a href="https://culled.ai" class="logo-link logo-text-culled" target="_blank">Culled<span>.ai</span></a>
+    <h2 class="reveal">How It Works</h2>
+    <div class="divider" style="background: #ef4444;"></div>
+    <div class="grid-3 stagger" style="margin-top: 24px;">
+      <div class="card card-dark">
+        <h3 style="margin-bottom: 4px;">1. Connect</h3>
+        <p style="font-size: 14px; color: #a0a4b8;">Link your email, Slack, texts, and messaging apps. Culled ingests messages from every source into a unified pipeline.</p>
+      </div>
+      <div class="card card-dark">
+        <h3 style="margin-bottom: 4px;">2. Filter</h3>
+        <p style="font-size: 14px; color: #a0a4b8;">AI agents classify every message by urgency and action required. Noise is suppressed. Signal is amplified.</p>
+      </div>
+      <div class="card card-dark">
+        <h3 style="margin-bottom: 4px;">3. Act</h3>
+        <p style="font-size: 14px; color: #a0a4b8;">Daily digest or real-time feed of only action items. Every message rewritten as clear next steps that require your response.</p>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top: 24px;">
+      <div>
+        <ul class="feature-list culled">
+          <li><strong>Unified inbox</strong> &mdash; email, Slack, SMS, and messaging apps in one place</li>
+          <li><strong>AI classification</strong> &mdash; every message scored by urgency and action type</li>
+          <li><strong>Action extraction</strong> &mdash; messages rewritten as clear, actionable items</li>
+          <li><strong>Noise suppression</strong> &mdash; newsletters, FYIs, and low-priority items filtered out</li>
+          <li><strong>Flexible delivery</strong> &mdash; daily digest email or real-time notification feed</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card card-dark" style="margin-bottom: 16px;">
+          <h3 class="accent-culled">The Vision</h3>
+          <p style="font-size: 14px; color: #a0a4b8;">Your inbox should be a list of things to do &mdash; not a river of noise. Culled uses agentic AI to read, classify, and extract the signal from every message you receive, across every platform.</p>
+        </div>
+        <div class="card card-dark">
+          <h3 class="accent-culled">Delivery</h3>
+          <p style="font-size: 14px; color: #a0a4b8;">Choose your mode: a clean daily digest email with only action items, or a real-time feed that updates as messages arrive. Either way &mdash; only what matters.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Culled.ai</span><span>13</span></div>
+</div>
+
+<!-- ============================================ -->
 <!-- CROSS-SELL / MOAT -->
 <!-- ============================================ -->
 <div class="page page-dark">
@@ -1051,7 +1262,7 @@
       </div>
     </div>
   </div>
-  <div class="page-footer"><span>The Flywheel</span><span>10</span></div>
+  <div class="page-footer"><span>The Flywheel</span><span>14</span></div>
 </div>
 
 <!-- ============================================ -->
@@ -1062,8 +1273,8 @@
     <h2 style="margin-bottom: 8px;">Jason Morris</h2>
     <p class="subtitle">Founder &amp; Builder</p>
     <div class="divider" style="background: #555; margin: 24px auto;"></div>
-    <p style="max-width: 520px; margin: 0 auto 40px; font-size: 16px; color: #a0a4b8;">Full-stack engineer and solo founder building vertically integrated SaaS for retail. Three products, three LLCs, one person shipping production code across AI, payments, and hardware.</p>
-    <div class="grid-3">
+    <p style="max-width: 520px; margin: 0 auto 40px; font-size: 16px; color: #a0a4b8;">Full-stack engineer and solo founder building across SaaS, AI, luxury goods, and productivity. Five products, five LLCs, one person shipping production code across AI, payments, hardware, and jewelry.</p>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 24px 0;">
       <div class="card card-dark" style="text-align: center;">
         <a href="https://reefract.ai" class="logo-link" target="_blank"><img src="reefract-logo.png" alt="Reefract" style="height: 36px; margin: 0 auto 12px; display: block;"></a>
         <div class="stat-number accent-reefract" style="font-size: 18px;">Reefract LLC</div>
@@ -1079,39 +1290,19 @@
         <div class="stat-number accent-boost" style="font-size: 18px;">BuddyBoost LLC</div>
         <div class="stat-label">Michigan LLC</div>
       </div>
-    </div>
-  </div>
-  <div class="page-footer"><span>Founder</span><span>11</span></div>
-</div>
-
-<!-- ============================================ -->
-<!-- CULLED — COMING SOON -->
-<!-- ============================================ -->
-<div class="page page-dark" style="text-align: center;">
-  <div class="container">
-    <div class="pill reveal" style="background: rgba(239, 68, 68, 0.12); color: #ef4444;">Coming Soon</div>
-    <h1 class="reveal" style="font-size: 72px; font-family: 'Sora', -apple-system, sans-serif; font-weight: 800; letter-spacing: -2px; margin-bottom: 20px; line-height: 1;">
-      <span style="color: #fff;">Culled</span><span style="color: #ef4444;">.ai</span>
-    </h1>
-    <p class="subtitle reveal" style="max-width: 520px; margin: 0 auto 36px; font-size: 20px; line-height: 1.6;">
-      Your agentic inbox. Multiple tools for filtering, sorting, and cutting down the noise of messages &mdash; so all you see are <strong style="color: #fff;">action items</strong>.
-    </p>
-    <div class="reveal" style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
-      <div class="card card-dark" style="flex: 1; max-width: 200px; text-align: center;">
-        <h3 style="color: #ef4444; font-size: 15px; margin-bottom: 4px;">Filter</h3>
-        <p style="font-size: 13px; color: #6b7280;">AI agents sort signal from noise across every inbox</p>
+      <div class="card card-dark" style="text-align: center;">
+        <a href="https://heroncollection.com" class="logo-link logo-text-heron-sm" style="display: block; text-align: center; margin-bottom: 12px; font-size: 18px; letter-spacing: 3px;" target="_blank">HERON</a>
+        <div class="stat-number accent-heron" style="font-size: 18px;">Heron Collection LLC</div>
+        <div class="stat-label">Michigan LLC</div>
       </div>
-      <div class="card card-dark" style="flex: 1; max-width: 200px; text-align: center;">
-        <h3 style="color: #ef4444; font-size: 15px; margin-bottom: 4px;">Extract</h3>
-        <p style="font-size: 13px; color: #6b7280;">Every message rewritten as action items and inputs</p>
-      </div>
-      <div class="card card-dark" style="flex: 1; max-width: 200px; text-align: center;">
-        <h3 style="color: #ef4444; font-size: 15px; margin-bottom: 4px;">Deliver</h3>
-        <p style="font-size: 13px; color: #6b7280;">Daily digest or real-time feed &mdash; only what matters</p>
+      <div class="card card-dark" style="text-align: center;">
+        <a href="https://culled.ai" class="logo-link logo-text-culled-sm" style="display: block; text-align: center; margin-bottom: 12px; font-size: 18px;" target="_blank">Culled<span>.ai</span></a>
+        <div class="stat-number accent-culled" style="font-size: 18px;">Culled LLC</div>
+        <div class="stat-label">Michigan LLC</div>
       </div>
     </div>
   </div>
-  <div class="page-footer"><span>Culled.ai &mdash; Coming Soon</span><span>12</span></div>
+  <div class="page-footer"><span>Founder</span><span>15</span></div>
 </div>
 
 <!-- ============================================ -->
@@ -1125,13 +1316,15 @@
       <p style="font-size: 16px;"><strong>Jason Morris</strong></p>
       <p style="font-size: 15px; color: #a0a4b8;"><a href="tel:+12488180720" style="color: #3b82f6; text-decoration: none;">(248) 818-0720</a></p>
     </div>
-    <div style="display: flex; align-items: center; justify-content: center; gap: 32px; margin-top: 48px;">
+    <div style="display: flex; align-items: center; justify-content: center; gap: 32px; margin-top: 48px; flex-wrap: wrap;">
       <a href="https://reefract.ai" class="logo-link" target="_blank"><img src="reefract-logo.png" alt="Reefract" style="height: 28px;"></a>
       <a href="https://teyra.io" class="logo-link" target="_blank"><img src="teyra-logo.png" alt="Teyra" style="height: 28px;"></a>
       <a href="https://buddyboost.io" class="logo-link logo-text-boost-sm" style="margin-bottom: 0;" target="_blank">Buddy<span>Boost</span></a>
+      <a href="https://heroncollection.com" class="logo-link logo-text-heron-sm" style="margin-bottom: 0;" target="_blank">HERON</a>
+      <a href="https://culled.ai" class="logo-link logo-text-culled-sm" style="margin-bottom: 0;" target="_blank">Culled<span>.ai</span></a>
     </div>
   </div>
-  <div class="page-footer"><span>Confidential</span><span>12</span></div>
+  <div class="page-footer"><span>Confidential</span><span>16</span></div>
 </div>
 
 <script>
